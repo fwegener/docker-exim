@@ -33,6 +33,7 @@ build-dev:
 exim:
 	-@docker rm --force "$@"
 	docker run --detach \
+		--net="host" \
 		--name "$@" \
 		$(DOCKER_RUN_OPTIONS) \
 		--volume "$(docker_exim_permanent_storage)/data:/var/mail" \

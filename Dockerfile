@@ -14,12 +14,14 @@ RUN DEBIAN_FRONTEND=noninteractive ;\
     apt-get install --assume-yes \
         exim4 \
 	maildrop \
+        tcpdump \
         sudo
 
 RUN apt-get clean
 
 RUN { \
         ln --symbolic --force /exim4/exim4.conf /etc/exim4/exim4.conf; \
+        chown -R mail:mail /var/spool/exim4; \
 }
 
 EXPOSE 25
