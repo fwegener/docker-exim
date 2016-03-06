@@ -1,0 +1,18 @@
+exim:
+  container_name:
+    exim
+  image:
+    fwegener/exim
+  #build: .
+  net:
+    "host"
+  ports:
+    - "25:25"
+  volumes:
+    - /data/docker/mail-data/data:/var/mail
+    - /data/docker/mail-data/log:/var/log/exim4
+    - /data/docker/mail-data/config:/exim4:ro
+    - /data/docker/etc/ssl/gwy2.crt:/etc/ssl/certs/ssl-mail.pem:ro
+    - /data/docker/etc/ssl/gwy2.key:/etc/ssl/private/ssl-mail.key:ro
+  environment:
+    - TZ=Europe/Berlin
