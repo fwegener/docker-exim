@@ -1,9 +1,9 @@
 exim:
   container_name:
     exim
-  image:
-    fwegener/exim
-  #build: .
+  #image:
+  #  fwegener/exim
+  build: .
   net:
     "host"
   ports:

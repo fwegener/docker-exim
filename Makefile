@@ -3,7 +3,7 @@
 DOCKER_RUN_OPTIONS ?= --env "TZ=Europe/Berlin"
 
 docker_exim_permanent_storage ?= /data/docker/mail-data
-docker_exim_ssl_cert ?= /data/docker/etc/ssl/gwy2.pem
+docker_exim_ssl_cert ?= /data/docker/etc/ssl/gwy2.crt
 docker_exim_ssl_key  ?= /data/docker/etc/ssl/gwy2.key
 docker_exim_servername ?= exim
 image_exim ?= fwegener/exim
